@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presenter.activities.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainScreenToolbar"
+        android:background="@color/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"/>
+
+    <TextView
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/mainScreenToolbar"
+        app:layout_constraintRight_toRightOf="@id/mainScreenToolbar"
+        app:layout_constraintTop_toTopOf="@id/mainScreenToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/mainScreenToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:visibility="invisible"
+        android:id="@+id/mainPageMenu"
+        android:layout_width="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/mainScreenToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/mainScreenToolbar"
+        app:layout_constraintLeft_toLeftOf="@id/mainScreenToolbar"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_baseline_dehaze_24"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleList"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/item_in_progress"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/mainScreenToolbar"
+        app:layout_constraintBottom_toTopOf="@id/navigationBottom"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addAlarm"
+        app:elevation="4dp"
+        app:rippleColor="#DFC6A8A8"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mainScreenToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/mainScreenToolbar"
+        app:fabSize="mini"
+        android:layout_marginEnd="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigationBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bottomNav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/main_left_menu"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

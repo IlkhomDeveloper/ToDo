@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.TopRightAndBottomLeft8dp"
+    app:strokeColor="@color/circleMain"
+    app:strokeWidth="2dp"
+    app:cardElevation="4dp"
+    android:layout_margin="2dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+
+        <TextView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="8dp"
+            android:background="@color/circleMain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <TextView
+            android:id="@+id/itemText"
+            android:padding="8dp"
+            android:layout_width="wrap_content"
+            tools:text="Done"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/itemTime"
+            app:layout_constraintBottom_toBottomOf="@id/itemTime"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/itemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="25"
+            android:text="@string/app_name"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintLeft_toLeftOf="@id/line" />
+
+        <TextView
+            android:id="@+id/itemDate"
+            style="@style/TextDateStyle"
+            tools:text="25.02.2013"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <TextView
+            android:id="@+id/itemTime"
+            style="@style/TextDateStyle"
+            tools:text="19:30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/itemText"
+            app:layout_constraintStart_toEndOf="@id/itemDate"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

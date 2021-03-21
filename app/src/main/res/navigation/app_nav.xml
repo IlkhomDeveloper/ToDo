@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        tools:layout="@layout/main_screen"
+        android:id="@+id/mainPageFragment"
+        android:name="com.example.alarmclockdemo.presenter.fragments.InProgressFragment"
+        android:label="MainPageFragment" >
+        <action
+            android:id="@+id/action_mainPageFragment_to_showDialogAdd"
+            app:destination="@id/showDialogAdd"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_showDialogUpdate"
+            app:destination="@id/showDialogUpdate"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+        <argument
+            android:name="itemID"
+            app:argType="com.example.alarmclockdemo.data.vo.AlarmVo"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_donePageFragment"
+            app:destination="@id/donePageFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_allPageFragment"
+            app:destination="@id/allPageFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_allPageFragment2"
+            app:destination="@id/allPageFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_donePageFragment2"
+            app:destination="@id/donePageFragment" />
+    </fragment>
+    <dialog
+        tools:layout="@layout/add_alarm"
+        android:id="@+id/showDialogAdd"
+        android:name="com.example.alarmclockdemo.presenter.dialogs.ShowDialogAdd"
+        android:label="ShowDialogAdd" >
+        <action
+            android:id="@+id/action_showDialogAdd_to_timeDialog"
+            app:destination="@id/timeDialog" />
+        <action
+            android:id="@+id/action_showDialogAdd_to_dateDialog"
+            app:destination="@id/dateDialog" />
+    </dialog>
+    <dialog
+        tools:layout="@layout/update_alarm"
+        android:id="@+id/showDialogUpdate"
+        android:name="com.example.alarmclockdemo.presenter.dialogs.ShowDialogUpdate"
+        android:label="ShowDialogUpdate" >
+        <action
+            android:id="@+id/action_showDialogUpdate_to_timeDialog"
+            app:destination="@id/timeDialog" />
+        <action
+            android:id="@+id/action_showDialogUpdate_to_dateDialog"
+            app:destination="@id/dateDialog" />
+        <argument
+            android:name="alarmVo"
+            app:argType="com.example.alarmclockdemo.data.vo.AlarmVo"
+            app:nullable="true" />
+    </dialog>
+    <dialog
+        android:id="@+id/dateDialog"
+        android:name="com.example.alarmclockdemo.presenter.dialogs.DateDialog"
+        android:label="DateDialog" >
+    </dialog>
+    <dialog
+        android:id="@+id/timeDialog"
+        android:name="com.example.alarmclockdemo.presenter.dialogs.TimeDialog"
+        android:label="TimeDialog" />
+    <fragment
+        android:id="@+id/donePageFragment"
+        tools:layout="@layout/done_fragment"
+        android:name="com.example.alarmclockdemo.presenter.fragments.DonePageFragment"
+        android:label="DonePageFragment" />
+    <fragment
+        android:id="@+id/allPageFragment"
+        tools:layout="@layout/all_fragment"
+        android:name="com.example.alarmclockdemo.presenter.fragments.AllPageFragment"
+        android:label="AllPageFragment" />
+</navigation>

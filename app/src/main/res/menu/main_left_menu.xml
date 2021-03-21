@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/inProgressToDo"
+            android:icon="@drawable/ic_baseline_in_progress_24"
+            android:title="In Progress"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/doneTodo"
+            android:icon="@drawable/ic_baseline_done_all_24"
+            android:title="done"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/allTodo"
+            android:icon="@drawable/ic_baseline_select_all_24"
+            android:title="All"
+            app:showAsAction="withText" />
+    </group>
+</menu>

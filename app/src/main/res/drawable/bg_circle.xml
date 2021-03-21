@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <stroke android:color="@color/circleEdgeLineClicked"/>
+            <solid android:color="@color/circleMainClicked"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="oval">
+            <stroke android:color="@color/circleEdgeLine"/>
+            <solid android:color="@color/circleMain"/>
+        </shape>
+    </item>
+
+</selector>
